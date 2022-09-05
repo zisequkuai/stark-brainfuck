@@ -8,7 +8,7 @@ def test_vm():
     expected_output = "Hello World!\n"
     #program = ">++++++++++[>+++><<-]>+++><<>."
     #expected_output = "!"
-    input_data, output_data = VirtualMachine.execute(code)
+    running_time,input_data, output_data = VirtualMachine.execute(code)
     output_data = "".join(od for od in output_data)
     assert(output_data ==
            expected_output), f"output data invalid; given:\"{output_data}\", but should be \"{expected_output}\""
@@ -133,3 +133,4 @@ def test_extend():
 
     # assert(processor_extension.output_evaluation_terminal ==
     #        VirtualMachine.evaluation_terminal([row[0] for row in output_table.table], delta)), f"processor output evaluation == {processor_extension.output_evaluation_terminal} =/= locally computed output evaluation == {VirtualMachine.evaluation_terminal(output_table.table, delta)}"
+
